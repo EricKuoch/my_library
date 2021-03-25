@@ -1,0 +1,260 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+// Graphical variables
+@import "config/colors";
+
+// //CONFIGURATION
+// @import './configuration/variables';
+@import './config/utilities';
+
+// // COMPONENTS
+// @import './components/buttons';
+// @import './components/cards';
+// @import './components/carousel';
+// @import './components/flashes';
+// @import './components/forms';
+// @import './components/footer';
+// @import './components/header';
+// @import './components/iframes';
+// @import './components/images';
+// @import './components/modals';
+// @import './components/progress_bars';
+// @import './components/typography';
+
+// // PAGES
+// @import './pages/pages';
+
+// FONTS
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: asset-url('LibreBaskerville-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Libre Franklin';
+  src: asset-url('LibreFranklin-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Dancing Script';
+  src: asset-url('DancingScript-VariableFont_wght.ttf') format('truetype');
+}
+
+@import "components/index";
+@import "components/navbar";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+html, body {
+  margin: 0px;
+  background: rgb(249,247,244);
+}
+
+body {
+  height: 100%;
+  font-family: "Libre Baskerville";
+}
+h1 {
+  font-family: "Libre Franklin";
+  height: 100%;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+ul {
+  padding: 0px;
+}
+.card {
+  background: white;
+  padding: 6px;
+  text-decoration: none;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  // sets up hover state
+  position: relative;
+  top: 0;
+  transition: all .1s ease-in;
+  height:190px;
+  &:hover {
+    top: -2px;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+  }
+  .article-title {
+    font-family: 'Libre Franklin';
+    font-size: 15px;
+    font-weight: 400;
+    width: 250px;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .card-submit {
+    position: absolute;
+    right: 7px;
+    top: 18px;
+    border: none;
+    background: white;
+    color: green;
+    span {
+      margin-right: 2px;
+    }
+  }
+  .card-submit:hover{
+    color: black;
+  }
+  .card-image {
+    margin-top: 30px;
+    margin-left: 8px;
+    border-bottom: solid;
+    border-width: 1px;
+    border-block-color: black;
+    height: 135px;
+    width: 100px;
+  }
+  .card-content {
+    margin-left: 5%;
+  }
+  .article {
+    font-size: 10px;
+  }
+  .description {
+    font-size: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical; 
+    margin-right: 20px;
+  }
+}
+
+.container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.search-bar {
+  border: solid;
+  width: fit-content;
+  border-width: 1px;
+  border-radius: 3px;
+  margin-top: 20px;
+  background: white;
+  :focus {
+    outline: none !important;
+  }
+  input {
+    border: none;
+    width: 20rem;
+    height: 2rem;
+    padding-left: 10px;
+  }
+  button {
+    background: white;
+    border:none;
+  }
+  
+}
+.page-wrapper{
+  display: flex;
+  position: relative;
+  .current-book-container {
+    position: absolute;
+    right: 0px;
+    top: 16px;
+    background: white;
+    width: 260px;
+    .title {
+      font-size: 15px;
+      margin: 6%;
+      padding: 5px;
+      border-bottom: solid;
+      border-width: 1px;
+      margin-left: 47px;
+    }
+  }
+  .book-container {
+    width: 1000px;
+  }
+}
+.edito-container {
+  display: flex;
+  margin: 9%;
+  margin-top: 0;
+  .edito {
+    margin-left: 7px;
+    .article-title{
+      font-family: 'Libre Franklin';
+      font-size: 15px;
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+    .article {
+      font-size: 10px;
+    }
+  }
+}
+
+.button-edito {
+  color: #fff !important;
+  text-decoration: none;
+  background:green;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+  margin-bottom: 15px;
+  font-family: 'Libre Franklin';
+  }
+.button-edito:hover {
+  background: #434343;
+  letter-spacing: 1px;
+  transition: all 0.4s ease 0s;
+  }
+
+.avatar-rank {
+  width: 33px;
+  position: absolute;
+  left: 0px;
+  top: -19px;
+  border-width: thin;
+  color: palevioletred;
+  border-radius: 50%;
+  height: 30px;
+  font-size: 23px;
+  opacity: 0.69;
+}
+.button-buy {
+  position: absolute;
+  background: rgb;
+  right: 13px;
+  bottom: 9px;
+  height: 30px;
+  background-color: #f6cb2e;
+  border-radius: 4px;
+  color: white;
+  border: none;
+  opacity: 0.80;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+.button-buy:hover {
+  opacity: 1;
+}
