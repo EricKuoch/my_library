@@ -1,0 +1,50 @@
+
+.container
+  .page-wrapper style="display:block"
+    .book-container
+      h1 = @library_book.title
+      .tbl-header
+        table border="0" cellpadding="0" cellspacing="0" 
+          thead
+            tr
+              th Favorite quotes
+              th.table-header-actions data-trigger-modal="quotes"
+                i.button-edit class="fas fa-plus"
+
+      .tbl-content
+        table border="0" cellpadding="0" cellspacing="0" 
+          tbody
+            = form_with model: @library_book do |library_book_form|
+              - @library_book.quotes.order(:pages).each do |quote|
+                  = library_book_form.fields_for :quotes, quote do |quote_form|
+                    tr
+                        td 
+                          = quote_form.label "Chapter #{quote.chapter}, p°#{quote.pages}"
+                          = quote_form.text_area :description, cols: 100, rows: 5
+                        td.table-actions.label-quote 
+                          i = quote_form.submit "Save", :class => 'button-edit' 
+                          = link_to library_book_quote_path(@library_book.id, quote.id), :method => :delete, data: {confirm: 'Are you sure?'}
+                            button.button-delete
+                              i class="fas fa-trash button"
+            div data-modal="quotes" class="modal"
+              div class="modal-content"
+                  = form_with url: library_book_quotes_path(@library_book.id, Quote.new), method: "POST", local:true do |quote_form|
+                    = quote_form.label "Add your favorite quote"
+                    = quote_form.text_area :description, cols: 100, rows: 5
+                    = quote_form.label "Chapter"
+                    = quote_form.number_field :chapter, cols: 100, rows: 5
+                    = quote_form.label "Pages"
+                    = quote_form.number_field :pages, cols: 100, rows: 5
+                    i = quote_form.submit "Add", :class => 'button-edit'
+    = form_with model: @library_book do |library_book_form|
+      .current-book-container
+        .div style="display:flex"
+          h1.title  = @library_book.title
+        .edito-container
+          img src="#{@library_book.image}"
+          .edito
+            .article-title = "by #{@library_book.author}"
+        .button_cont align="center"
+          = library_book_form.select :status, LibraryBook.statuses.keys, {:selected => @library_book.status }, data: {submit:"true"}
+
+

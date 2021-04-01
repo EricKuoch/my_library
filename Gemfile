@@ -25,7 +25,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'slim-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+# Add authentification
+gem 'devise'
+# add font awesome
+gem 'font-awesome-sass'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
