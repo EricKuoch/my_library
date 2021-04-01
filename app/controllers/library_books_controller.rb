@@ -21,7 +21,6 @@ class LibraryBooksController < ApplicationController
 
   def update
     @library_book.update(library_books_params)
-    redirect_to library_book_path(@library_book), :notice => "Your book has been updated"
   end
 
   def create
