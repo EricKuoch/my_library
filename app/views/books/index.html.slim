@@ -10,13 +10,3 @@
     .page-wrapper
       .book-container
         ul.wrapper id='results'
-      .current-book-container
-        .div style="display:flex"
-          h1.title CURRENT READING <i class="fas fa-book-reader fa-md" style="margin-top:15px"></i>
-        .edito-container
-          img src= @current_reading.image
-          .edito
-            .article-title = @current_reading.title
-            .article = @current_reading.author
-        .button_cont align="center"
-          a class="button-edito" Set a new book
