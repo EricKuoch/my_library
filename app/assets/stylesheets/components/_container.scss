@@ -1,0 +1,56 @@
+.container {
+  background:white;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.navbar .container {
+  background: rgb(244, 242, 234);
+}
+
+.page-wrapper{
+  display: flex;
+  position: relative;
+  .current-book-container {
+    position: absolute;
+    right: 0px;
+    top: 16px;
+    background: white;
+    width: 260px;
+    .title {
+      font-size: 15px;
+      margin: 6%;
+      padding: 5px;
+      border-bottom: solid;
+      border-width: 1px;
+      margin-left: 47px;
+    }
+  }
+  .book-container {
+    width: 1000px;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.edito-container {
+  display: flex;
+  margin: 9%;
+  margin-top: 0;
+  .edito {
+    margin-left: 7px;
+    .article-title{
+      font-family: 'Libre Franklin';
+      font-size: 15px;
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+    .article {
+      font-size: 10px;
+    }
+  }
+}

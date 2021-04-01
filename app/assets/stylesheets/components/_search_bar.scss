@@ -1,0 +1,21 @@
+.search-bar {
+  border: solid;
+  width: fit-content;
+  border-width: 1px;
+  border-radius: 3px;
+  margin-top: 20px;
+  background: white;
+  :focus {
+    outline: none !important;
+  }
+  input {
+    border: none;
+    width: 20rem;
+    height: 2rem;
+    padding-left: 10px;
+  }
+  button {
+    background: white;
+    border:none;
+  }
+}

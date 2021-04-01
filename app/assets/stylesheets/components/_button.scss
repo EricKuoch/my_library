@@ -32,6 +32,56 @@
   opacity: 0.8;
   color: #FFFFFF;
 }
+
 .button-delete:hover{
   opacity: 1;
+  }
+  .button-edito {
+    color: black !important;
+    text-decoration: none;
+    background:green;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    margin-bottom: 15px;
+    font-family: 'Libre Franklin';
+    }
+  .button-edito:hover {
+    background: #434343;
+    letter-spacing: 1px;
+    transition: all 0.4s ease 0s;
+    }
+  
+  .avatar-rank {
+    width: 33px;
+    position: absolute;
+    left: 0px;
+    top: -19px;
+    border-width: thin;
+    color: palevioletred;
+    border-radius: 50%;
+    height: 30px;
+    font-size: 23px;
+    opacity: 0.69;
+  }
+  .button-buy {
+    position: absolute;
+    background: rgb;
+    right: 13px;
+    bottom: 9px;
+    height: 30px;
+    background-color: #f6cb2e;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    opacity: 0.80;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+  .button-buy:hover {
+    opacity: 1;
   }

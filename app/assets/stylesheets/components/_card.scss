@@ -1,0 +1,64 @@
+.card {
+  background: white;
+  padding: 6px;
+  text-decoration: none;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  // sets up hover state
+  position: relative;
+  top: 0;
+  transition: all .1s ease-in;
+  height:190px;
+  &:hover {
+    top: -2px;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+  }
+  .article-title {
+    font-family: 'Libre Franklin';
+    font-size: 15px;
+    font-weight: 400;
+    width: 250px;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .card-submit {
+    position: absolute;
+    right: 7px;
+    top: 18px;
+    border: none;
+    background: white;
+    color: green;
+    span {
+      margin-right: 2px;
+    }
+  }
+  .card-submit:hover{
+    color: black;
+  }
+  .card-image {
+    margin-top: 30px;
+    margin-left: 8px;
+    border-bottom: solid;
+    border-width: 1px;
+    border-block-color: black;
+    height: 135px;
+    width: 100px;
+  }
+  .card-content {
+    margin-left: 5%;
+  }
+  .article {
+    font-size: 10px;
+  }
+  .description {
+    font-size: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical; 
+    margin-right: 20px;
+  }
+}
