@@ -10,7 +10,7 @@ class LibraryBooksController < ApplicationController
   end
 
   def show
-    @library_book.quotes.order(:description)
+    @library_book
   end
 
   def destroy
