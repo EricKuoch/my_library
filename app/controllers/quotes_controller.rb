@@ -1,7 +1,11 @@
 class QuotesController < ApplicationController
 
+  def index
+    @quotes = current_user.quotes
+  end
+
   def create
-    @quote = Quote.new(description: params[:description], chapter: params[:chapter], pages: params[:pages], library_book_id: params[:library_book_id])
+    @quote = Quote.new(description: params[:description], chapter: params[:chapter], pages: params[:pages], library_book_id: params[:library_book_id], user_id: current_user.id)
     @quote.save
     redirect_to library_book_path(params[:library_book_id])
   end

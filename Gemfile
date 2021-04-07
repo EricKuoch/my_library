@@ -29,6 +29,10 @@ gem 'slim-rails'
 gem 'devise'
 # add font awesome
 gem 'font-awesome-sass'
+
+# add simple way to group by
+gem 'groupdate'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

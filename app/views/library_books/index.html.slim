@@ -27,4 +27,7 @@
                   i class="fas fa-edit button"
               = link_to library_book_path(lib_book.id), :method => :delete, data: {confirm: 'Are you sure?'}
                 button.button-delete
-                  i class="fas fa-trash button"
+                  i class="fas fa-trash button" 
+      = link_to books_path
+        button.button-find.table-header-actions
+          p Find a book from the library <i class="fas fa-search"> </i>

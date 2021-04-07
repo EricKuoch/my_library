@@ -47,7 +47,7 @@ document.addEventListener("turbolinks:load", function() {
       })
     }
   var apiKey = "9Rv9vPJFbJpoM0nlXyT1yDz3sSrajGzC"
-  const apiUrl = 'https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=' + apiKey
+  const apiUrl = `https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=${apiKey}`
   fetch(apiUrl)
     .then(response => response.json())
     .then(insertResult);

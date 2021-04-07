@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :library
   has_many :library_book
+  after_save :add_library
+
+  def add_library
+    Library.create(name: "Name", user_id:id)
+  end
 end
