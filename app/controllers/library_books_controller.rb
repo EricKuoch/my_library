@@ -25,10 +25,13 @@ class LibraryBooksController < ApplicationController
 
   def create
     @library_book = LibraryBook.new(library_books_params.merge({library_id: current_user.library.id}))
-    if @library_book.save
-      redirect_to library_book_path(@library_book)
-    else
-      redirect_to books_path
+    respond_to do |format|
+      if @library_book.save
+        format.js
+        format.html {redirect_to library_book_path(@library_book), notice: "Your book has been successfully added"}
+      else
+        redirect_to books_path
+      end
     end
   end
 

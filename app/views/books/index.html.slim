@@ -10,3 +10,15 @@
     .page-wrapper
       .book-container
         ul.wrapper id='results'
+          - @library_books.each do |library_book|
+            li
+              .card
+                .card-content
+                  img.card-image src="#{library_book.image}"
+                .card-content
+                  p.article-title = library_book.title
+                  p.article = "by #{library_book.author}"
+                  p.description = library_book.description
+                  button.card-submit 
+                    span Added
+                    i.fas.fa-check.fa-lg
