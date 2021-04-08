@@ -1,0 +1,6 @@
+alert(2)
+  document.querySelectorAll('[data-add-button]').forEach(trigger => {
+    trigger.addEventListener("click", () => {
+      trigger.innerHTML = "Added"
+    })
+  })

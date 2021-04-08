@@ -28,7 +28,7 @@ class LibraryBooksController < ApplicationController
     respond_to do |format|
       if @library_book.save
         format.js
-        format.html {redirect_to library_book_path(@library_book), notice: "Your book has been successfully added"}
+        format.html
       else
         redirect_to books_path
       end
