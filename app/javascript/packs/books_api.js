@@ -1,6 +1,7 @@
 document.addEventListener("turbolinks:load", function() {
   const searchBar = document.querySelector('#search-books')
   const results = document.querySelector('#results')
+  const title = document.querySelector('#results-title')
   if(results) {
     const insertResult = (data) => {
       data.items.forEach((book) => {
@@ -45,8 +46,9 @@ document.addEventListener("turbolinks:load", function() {
   
       searchBar.addEventListener('submit', (event) => {
         results.innerHTML = "";
-        event.preventDefault()
         const keyword = document.querySelector('#keywords').value
+        title.innerHTML = `Your results for : "${keyword}"`;
+        event.preventDefault()
         searchBook(keyword)
       })
   }

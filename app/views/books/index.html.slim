@@ -9,6 +9,7 @@
           i class="fa fa-search fa-lg" aria-hidden="true"
     .page-wrapper
       .book-container
+        p id='results-title' Books you've added recently on your booshelves
         ul.wrapper id='results'
           - @library_books.each do |library_book|
             li
