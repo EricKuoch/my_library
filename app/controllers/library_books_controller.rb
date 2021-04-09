@@ -24,16 +24,14 @@ class LibraryBooksController < ApplicationController
   end
 
   def create
-    @library_book = LibraryBook.new(library_books_params.merge({library_id: current_user.library.id}))
-    respond_to do |format|
-      if @library_book.save
-        format.js
-        format.html
-      else
-        redirect_to books_path
-      end
+    @library_book = LibraryBook.new(library_books_params)
+    if @library_book.save
+      redirect_to books_path, notice: "Book was successfully added to your bookshelve"
+    else
+      redirect_to books_path, notice: "Book was not successfully added to your bookshelve"
     end
-  end
+end
+
 
   private
 
@@ -42,6 +40,6 @@ class LibraryBooksController < ApplicationController
   end
 
   def library_books_params
-    params.require(:library_book).permit(:id, :author, :status, :description, :genre, :title, :library_id, :image, quotes_attributes: [:id, :description, :pages, :chapter])
+    params.require(:library_book).permit(:id, :author, :status, :description, :genre, :title, :library_id, :image, quotes_attributes: [:id, :description, :pages, :chapter]).merge({user_id: current_user.id})
   end
 end
