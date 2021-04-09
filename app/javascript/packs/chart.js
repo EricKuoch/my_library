@@ -14,10 +14,12 @@ document.addEventListener("turbolinks:load", function() {
             }]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     beginAtZero: true
-                }
+                },
             }
         }
     });

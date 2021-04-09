@@ -1,3 +1,13 @@
 div.container
-  canvas id="bookChart" width="400" height="400" data-labels="#{@stats_library_books.keys}" data-results="#{@stats_library_books.values}"
-  canvas id="quoteChart" width="400" height="400" data-labels="#{@stats_quotes.keys}" data-results="#{@stats_quotes.values}"
+  .chart-container
+    canvas.card id="bookChart" data-labels="#{@stats_library_books_by_week.keys}" data-results="#{@stats_library_books_by_week.values}"
+    .card
+      .card-content
+        .article-title Total of books:
+        .article-description = @library_books_total
+  .chart-container 
+    canvas.card id="quoteChart" data-labels="#{@stats_quotes_by_week.keys}" data-results="#{@stats_quotes_by_week.values}"
+    .card
+      .card-content
+        .article-title Total of quotes:
+        .article-description = @quotes_total
