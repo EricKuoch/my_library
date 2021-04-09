@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one :library
-  has_many :library_book
+  has_many :library_books
+  has_many :quotes
   after_save :add_library
 
   def add_library

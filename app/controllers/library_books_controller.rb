@@ -3,7 +3,7 @@ class LibraryBooksController < ApplicationController
   before_action :set_library_book, only: [:update, :show]
 
   def index 
-    @library_books = current_user.library.library_books
+    @library_books = current_user.library_books
   end
 
   def new
