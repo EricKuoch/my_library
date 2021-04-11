@@ -4,17 +4,22 @@
   margin-right: 5%;
 }
 
+#results-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .navbar .container {
   background: rgb(244, 242, 234);
 }
-
+.quote-container{
+  width: 1000px;
+}
 .page-wrapper{
-  display: flex;
-  position: relative;
   .current-book-container {
     position: absolute;
-    right: 0px;
-    top: 16px;
+    right: 72px;
+    top: 188px;
     background: white;
     width: 260px;
     .title {
@@ -25,9 +30,6 @@
       border-width: 1px;
       margin-left: 47px;
     }
-  }
-  .book-container {
-    width: 1000px;
   }
 }
 

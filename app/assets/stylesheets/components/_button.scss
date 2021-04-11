@@ -33,6 +33,22 @@
 .button-edit:hover{
   opacity: 1;
   }
+.button-discover {
+  margin: 99px 271px;
+  display: inline-block;
+  padding: 1em 1.2em;
+  border-radius: 31px;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  background-color: rgb(41,44,47);
+  transition: all 0.2s;
+  opacity: 0.5;
+  color: #FFFFFF;
+}
+.button-discover:hover{
+  opacity: 1;
+}
 
 .button-delete {
   display:inline-block;
