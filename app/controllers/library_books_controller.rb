@@ -32,7 +32,6 @@ class LibraryBooksController < ApplicationController
     end
 end
 
-
   private
 
   def set_library_book

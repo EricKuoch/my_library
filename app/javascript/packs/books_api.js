@@ -46,10 +46,11 @@ document.addEventListener("turbolinks:load", function() {
   
       searchBar.addEventListener('submit', (event) => {
         results.innerHTML = "";
-        const keyword = document.querySelector('#keywords').value
-        title.innerHTML = `Your results for : "${keyword}"`;
+        const keyword = document.querySelector('#keywords')
+        title.innerHTML = `Your results for : "${keyword.value}"`;
         event.preventDefault()
-        searchBook(keyword)
+        searchBook(keyword.value)
+        keyword.value = "";
       })
   }
 });

@@ -1,7 +1,7 @@
 
 .container
   .page-wrapper style="display:block"
-    .book-container
+    .quote-container
       h1 = @library_book.title
       .tbl-header
         table border="0" cellpadding="0" cellspacing="0" 
@@ -40,7 +40,7 @@
         .div style="display:flex"
           h1.title  = @library_book.title
         .edito-container
-          img src="#{@library_book.image}"
+          img style="width:100px" src="#{@library_book.image}"
           .edito
             .article-title = "by #{@library_book.author}"
         .button_cont align="center"

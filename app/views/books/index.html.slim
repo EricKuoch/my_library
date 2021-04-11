@@ -1,15 +1,24 @@
 .container
   header.header
     .container
-      h1 WELCOME TO THE LIBRARY
-      h3 Find a book and add it to your bookshelve
-      form id='search-books' class='search-bar'
-        input type='text' id='keywords' placeholder='Search for a book'
-        button type="submit"
-          i class="fa fa-search fa-lg" aria-hidden="true"
+      h1.title THE LIBRARY
+      div.tabs-search
+      div id="app" data-quote="#{@quotes}"
+      div.tabs-search
+        h3 Looking for a book ?
+        h3 Looking for a marvel comic ?
+      .search-bar-container
+        form id='search-books' class='search-bar'
+          input type='text' id='keywords' placeholder='Search for a book'
+          button type="submit"
+            i class="fa fa-search fa-lg" aria-hidden="true"
+        form id='search-books-marvel' class='search-bar'
+          input type='text' id='keywords-marvel' placeholder='Search for a marvel hero (Hulk, Thor ...) '
+          button type="submit"
+            i class="fa fa-search fa-lg" aria-hidden="true"
     .page-wrapper
       .book-container
-        p id='results-title' Books you've added recently on your booshelves
+        p id='results-title' Recently added :
         ul.wrapper id='results'
           - @library_books.each do |library_book|
             li
