@@ -29,6 +29,6 @@
                   p.article-title = library_book.title
                   p.article = "by #{library_book.author}"
                   p.description = library_book.description
-                  button.card-submit 
-                    span Added
-                    i.fas.fa-check.fa-lg
+                  button.card-submit
+                    = link_to "Added", library_book, remote: true, :method => :delete, data: { delete:"book", confirm: 'Are you sure?'}, class:"fas fa-check fa-lg"
+                    / i.fas.fa-check.fa-lg id="check-icon"

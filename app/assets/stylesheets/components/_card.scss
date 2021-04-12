@@ -16,6 +16,10 @@
     top: -2px;
     box-shadow: 0 4px 5px rgba(0,0,0,0.2);
   }
+  .card-content{
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
   .article-header{
     font-family: 'Libre Franklin';
     font-size: 20px;
@@ -45,6 +49,10 @@
     color: green;
     span {
       margin-right: 2px;
+    }
+    a {
+      text-decoration: none;
+      color:green;
     }
   }
   .card-submit:hover{
