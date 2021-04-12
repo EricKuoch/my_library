@@ -2,31 +2,30 @@
   <div class="container">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-    <% if user_signed_in? %>
-          <li class="nav-logo">
-            <a href="#top" id="first-O"><img src="https://cdn.pixabay.com/photo/2017/02/09/11/25/alphabet-2051685_960_720.png"  title="Golfer"/></a>
-            <a href="#top" id="second-O"><img src="https://cdn.pixabay.com/photo/2014/04/04/20/15/alphabet-313977_960_720.png"  title="Golfer"/></a>
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to "BOOKAPP", root_path, class: "nav-link-title" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Quotes", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My books (#{current_user.library_books.count})", library_books_path, class: "nav-link" %>
           </li>
-          <li class="nav-item active">
-            <%= link_to "B__k", root_path, class: "nav-link-title" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "My books (#{current_user.library_books.count})", library_books_path, class: "nav-link" %>
-            </li>
-          <li class="nav-item">
-            <%= link_to "Library", books_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Stats", stats_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
+        <li class="nav-item">
+          <%= link_to "Library", books_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Stats", stats_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
       </ul>
     </div>
   </div>
