@@ -1,0 +1,62 @@
+.form-sign {
+  margin-top: 95px;
+}
+.forgot-password {
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  font-family: sans-serif;
+  border-bottom: solid gray thin;
+  padding-bottom: 13px;
+  margin: 18px 30px;
+}
+
+.button-sign-up{
+  display: block;
+  width: 184px;
+  height: 38px;
+  text-align: center;
+  justify-content: center;
+  margin-left: 28%;
+  text-decoration: none;
+  background: green;
+  padding: 7px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 17px;
+  font-family: sans-serif;
+  color: white;
+  font-size: 18px;
+}
+
+.button-blue {
+  border: 0.1em solid #FFFFFF;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  background-color: blue;
+  transition: all 0.2s;
+  opacity: 0.8;
+  color: #FFFFFF;
+  width: 92%;
+  height: 3rem;
+  margin-top: 7px;
+  margin-left: 2%;
+  font-size: 21px;
+}
+.container-form-sign {
+  background: white;
+  margin-left: 35%;
+  margin-right: 5%;
+  width: 401px;
+  box-shadow: 0, 12.5px, 10px, rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+}
+.title-center {
+  text-align: center;
+  text-decoration: none;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
