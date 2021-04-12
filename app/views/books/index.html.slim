@@ -26,9 +26,8 @@
                 .card-content
                   img.card-image src="#{library_book.image}"
                 .card-content
-                  p.article-title = library_book.title
+                  h6 = link_to "#{library_book.title}", library_book_path(library_book.id), class: "article-title"
                   p.article = "by #{library_book.author}"
                   p.description = library_book.description
                   button.card-submit
                     = link_to "Added", library_book, remote: true, :method => :delete, data: { delete:"book", confirm: 'Are you sure?'}, class:"fas fa-check fa-lg"
-                    / i.fas.fa-check.fa-lg id="check-icon"
