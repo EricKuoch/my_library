@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     unless current_user
       render
     else
-      @quotes = current_user.quotes.includes(:library_book).map { |quote| [quote.description, quote.library_book.author] }
+      @quotes = current_user.quotes.includes(:library_book).map { |quote| "#{quote.description.capitalize} by #{quote.library_book.author}" }
       @quotes = @quotes.shuffle
     end
   end
