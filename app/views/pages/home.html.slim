@@ -1,8 +1,9 @@
 
 - if @quotes.nil? || @quotes.length == 0
-  .home
     .quote-text Find your books and write down your favorite quotes !
     = link_to "Go to the Library", books_path, class:"button-discover"
 - else
-  = javascript_pack_tag 'main'
-  div data-quote="#{@quotes}"
+  button.button-edito id="quote-launcher" Read quotes
+  #main-home
+    = javascript_pack_tag 'main'
+    div data-quote="#{@quotes}"
