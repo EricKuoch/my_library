@@ -1,24 +1,24 @@
 div.container
-  .chart-container
-    canvas.card id="bookChart" data-labels="#{@stats_library_books_by_month.keys}" data-results="#{@stats_library_books_by_month.values}"
+  .chart-container 
     .card
       .card-content
-        .article-header Statistics:
-        .article-title = "All books(overall): #{@library_books_total} quote(s)"
-  .chart-container 
+        p.article-header Quotes statistics:
+        p.article-title =  "All books(overall): #{@quotes_total} quote(s) "
+        p.article-title data-stat="#{@quotes_total}" id="all-books-monthly" = "All books(monthly): #{@quotes_total} quote(s)"
+        p.article-title id="book-monthly"
+    canvas.card id="quoteChart" data-labels="#{@stats_quotes_by_month.keys}" data-results="#{@stats_quotes_by_month.values}"
     .card.card-stat
       .card-content
-        .article-header Books:
+        .article-header Quotes from:
         ul
           li.radio
             input type="radio" data-labels="All books" name="quote-radio-button" checked="checked" data-stat="#{@stats_quotes_by_month.values}" = "All books"
           - @library_books.each do |library_book|
               li.radio
                 input type="radio" name="quote-radio-button" data-labels="#{library_book.title}" data-stat="#{library_book.quotes.group_by_day(:created_at, format: "%Y-%m-%d", range: PagesController::RANGE).count.values}" = library_book.title
-    canvas.card id="quoteChart" data-labels="#{@stats_quotes_by_month.keys}" data-results="#{@stats_quotes_by_month.values}"
+  .chart-container
     .card
       .card-content
-        p.article-header Statistics:
-        p.article-title =  "All books(overall): #{@quotes_total} quote(s) "
-        p.article-title data-stat="#{@quotes_total}" id="all-books-monthly" = "All books(monthly): #{@quotes_total} quote(s)"
-        p.article-title id="book-monthly"
+        .article-header Books statistics:
+        .article-title = "All books(overall): #{@library_books_total} book(s)"
+    canvas.card id="bookChart" data-labels="#{@stats_library_books_by_month.keys}" data-results="#{@stats_library_books_by_month.values}"
