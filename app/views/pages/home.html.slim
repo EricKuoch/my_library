@@ -1,7 +1,8 @@
+
 - if @quotes.nil? || @quotes.length == 0
-  .accueil
+  .home
     .quote-text Find your books and write down your favorite quotes !
     = link_to "Go to the Library", books_path, class:"button-discover"
 - else
-  .accueil
-    .quote-text id="random-quote" data-quote="#{@quotes}"
+  = javascript_pack_tag 'main'
+  div data-quote="#{@quotes}"
