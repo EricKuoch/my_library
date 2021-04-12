@@ -19,7 +19,7 @@ import { setTimeout } from 'timers';
         typeArray: JSON.parse(document.querySelector('[data-quote]').dataset.quote),
         typingSpeed: 100,
         erasingSpeed: 100,
-        newTextDelay: 2000,
+        newTextDelay: 1500,
         typeArrayIndex: 0,
         charIndex: 0
       }
