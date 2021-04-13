@@ -1,6 +1,7 @@
 class LibraryBooksController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_library_book, only: [:update, :show]
+  before_action :authenticate_user!, :only => [:show, :index]
 
   def index 
     @library_books = current_user.library_books
@@ -16,7 +17,6 @@ class LibraryBooksController < ApplicationController
   def destroy
     @library_book = LibraryBook.find(params[:id])
     @library_book.destroy!
-    redirect_to library_books_path, :notice => "Your book has been deleted"
   end
 
   def update

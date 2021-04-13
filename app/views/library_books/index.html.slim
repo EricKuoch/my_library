@@ -13,21 +13,27 @@
     .tbl-content
       table border="0" cellpadding="0" cellspacing="0" 
         tbody
-        - @library_books.each do |lib_book|
-          tr 
-            td = lib_book.title
-            td = lib_book.author
+        - if @library_books.count == 0  
+          tr
             td
-              = form_with(model: lib_book, method: "PATCH") do |library_book_form|
-                = library_book_form.select :status, LibraryBook.statuses.keys, {:selected => lib_book.status }, data: {submit:"true"}
-            td = lib_book.quotes.count
-            td.table-header-actions
-              = link_to library_book_path(lib_book.id)
-                button.button-edit
-                  i class="fas fa-edit button"
-              = link_to library_book_path(lib_book.id), :method => :delete, data: {confirm: 'Are you sure?'}
-                button.button-delete
-                  i class="fas fa-trash button" 
+            td No books added yet
+            td 
+        - else 
+          - @library_books.each do |lib_book|
+            tr 
+              td = lib_book.title
+              td = lib_book.author
+              td
+                = form_with(model: lib_book, method: "PATCH") do |library_book_form|
+                  = library_book_form.select :status, LibraryBook.statuses.keys, {:selected => lib_book.status }, data: {submit:"true"}
+              td = lib_book.quotes.count
+              td.table-header-actions
+                = link_to library_book_path(lib_book.id)
+                  button.button-edit
+                    i class="fas fa-edit button"
+                = link_to library_book_path(lib_book.id), remote:true, :method => :delete, data: { delete: 'library_book', confirm: 'Are you sure?' }
+                  button.button-delete
+                    i class="fas fa-trash button" 
       = link_to books_path
         button.button-find.table-header-actions
           p Find a book from the library <i class="fas fa-search"> </i>

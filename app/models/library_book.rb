@@ -12,4 +12,5 @@ class LibraryBook < ApplicationRecord
   scope :reading, -> { where(status: "reading") }
   scope :bought, -> { where(status: "bought") }
   scope :finished, -> { where(status: "finished") }
+
 end

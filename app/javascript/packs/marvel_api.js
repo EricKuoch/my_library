@@ -1,8 +1,8 @@
 
 document.addEventListener("turbolinks:load", function() {
-  const searchBarMarvel = document.querySelector('#search-books-marvel')
-  const results = document.querySelector('#results')
-  const title = document.querySelector('#results-title')
+  const searchBarMarvel = document.querySelector('#search-books-marvel');
+  const results = document.querySelector('#results');
+  const title = document.querySelector('#results-title');
   if(results) {
     const insertResult = (data) => {
       data.data.results.forEach((comic) => {
@@ -35,7 +35,7 @@ document.addEventListener("turbolinks:load", function() {
           </div>
         </li>
         `
-        results.insertAdjacentHTML("beforeend", templateBook)
+        results.insertAdjacentHTML("beforeend", templateBook);
       })
     }
     const searchBook = (keywordMarvel) => {
@@ -46,10 +46,10 @@ document.addEventListener("turbolinks:load", function() {
       }
       searchBarMarvel.addEventListener('submit', (event) => {
         results.innerHTML = "";
-        const keywordMarvel = document.querySelector('#keywords-marvel')
+        const keywordMarvel = document.querySelector('#keywords-marvel');
         title.innerHTML = `Your results for : "${keywordMarvel.value}"`;
-        event.preventDefault()
-        searchBook(keywordMarvel.value)
+        event.preventDefault();
+        searchBook(keywordMarvel.value);
         keywordMarvel.value = "";
       })
   }

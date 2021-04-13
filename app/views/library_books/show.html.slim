@@ -22,7 +22,7 @@
                         = quote_form.text_area :description, cols: 100, rows: 5
                       td.table-actions.label-quote 
                         i = quote_form.submit "Save", :class => 'button-edit'
-                        = link_to library_book_quote_path(@library_book.id, quote.id), :method => :delete, data: {confirm: 'Are you sure?'}
+                        = link_to library_book_quote_path(@library_book.id, quote.id), remote:true, :method => :delete, data: { confirm: 'Are you sure?' }
                           button.button-delete
                             i class="fas fa-trash button"
             div data-modal="quotes" class="modal"
